@@ -1,9 +1,12 @@
 @import "./base";
 
+///////////////////////////////////
+//////// HEADER COMPONENT /////////
+///////////////////////////////////
 .container {
   max-width: 120rem;
   min-height: 60rem;
-  margin: 4rem auto;
+  margin: 8rem auto;
   background-color: var(--color-grey-light-2);
   box-shadow: var(--shadow-dark);
 }
@@ -123,4 +126,86 @@
   background-color: #fff;
   flex: 1;
   background-color: orangered;
+}
+
+///////////////////////////////////
+//////// SIDE NAVIGATION //////////
+///////////////////////////////////
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.side-nav {
+  list-style: none;
+  color: var(--color-grey-light-2);
+  font-size: 1.6rem;
+  margin-top: 4rem;
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: transform 0.4s, width 0.4s cubic-bezier(0, 0.5, 1, 0.5) 0.4s;
+    z-index: -1;
+  }
+  &__item {
+    padding: 2rem 4rem;
+    position: relative;
+    z-index: 1;
+
+    &:first-of-type {
+      background-color: var(--color-primary);
+    }
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    &:hover::before {
+      transform: scaleY(1);
+      width: 100%;
+    }
+    // &:hover {
+    //   back
+    // }
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: var(--color-grey-light-1);
+    display: block;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+  &__icon {
+    height: 1.75rem;
+    width: 1.75rem;
+    margin-right: 2rem;
+    font-size: 2rem;
+    fill: currentColor;
+    margin-left: -1rem;
+  }
+  // &__text{
+  //   margin-left
+  // }
+}
+
+///////////////////////////////////
+//////// LEGAL TEXT //////////
+///////////////////////////////////
+
+.legal {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 2rem;
+  color: var(--color-grey-dark-2);
 }
