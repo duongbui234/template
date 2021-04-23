@@ -723,4 +723,65 @@ body {
   font-size: 10rem;
   font-family: sans-serif;
 }
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+}
+
+.cta__book-now {
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.cta .btn {
+  overflow: hidden;
+  position: relative;
+  border-radius: 4rem;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  color: var(--color-grey-light-2);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(var(--color-primary-light)), to(var(--color-primary-dark)));
+  background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+  cursor: pointer;
+}
+
+.cta .btn > * {
+  display: inline-block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.cta .btn:focus {
+  outline: none;
+}
+
+.cta .btn__visible {
+  padding: 2rem 6rem;
+}
+
+.cta .btn__invisible {
+  padding: 2rem 2rem;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+}
+
+.cta .btn:hover .btn__invisible {
+  top: 0;
+}
+
+.cta .btn:hover .btn__visible {
+  -webkit-transform: translateY(4rem);
+          transform: translateY(4rem);
+}
+
+.cta .btn:focus {
+  -webkit-animation: pulstate 1s infinite;
+          animation: pulstate 1s infinite;
+}
 /*# sourceMappingURL=main.css.map */
