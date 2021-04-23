@@ -33,6 +33,30 @@ html {
   font-size: 62.5%;
 }
 
+@media screen and (max-width: 1150px) {
+  html {
+    font-size: 58.5%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 45%;
+  }
+}
+
 body {
   font-family: "Open sans", sans-serif;
   font-weight: 400;
@@ -43,13 +67,6 @@ body {
   background-repeat: no-repeat;
   color: var(--color-grey-dark-2);
   min-height: 100vh;
-}
-
-.hotel-view {
-  background-color: #fff;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 }
 
 @-webkit-keyframes pulstate {
@@ -119,10 +136,16 @@ body {
 .container {
   max-width: 120rem;
   min-height: 60rem;
-  margin: 8rem auto;
+  margin: 6rem auto;
   background-color: var(--color-grey-light-2);
   -webkit-box-shadow: var(--shadow-dark);
           box-shadow: var(--shadow-dark);
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    margin: 0;
+  }
 }
 
 .header {
@@ -282,11 +305,21 @@ body {
   display: flex;
 }
 
+@media screen and (max-width: 750px) {
+  .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .sidebar {
   background-color: var(--color-grey-dark-1);
   -webkit-box-flex: 0;
       -ms-flex: 0 0 18%;
           flex: 0 0 18%;
+  font-size: 1.4rem;
 }
 
 .hotel-view {
@@ -316,6 +349,15 @@ body {
   margin-top: 4rem;
 }
 
+@media screen and (max-width: 750px) {
+  .side-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 0;
+  }
+}
+
 .side-nav__item::before {
   content: "";
   position: absolute;
@@ -336,9 +378,16 @@ body {
 }
 
 .side-nav__item {
-  padding: 2rem 4rem;
   position: relative;
   z-index: 1;
+}
+
+@media screen and (max-width: 750px) {
+  .side-nav__item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
 }
 
 .side-nav__item:first-of-type {
@@ -347,6 +396,12 @@ body {
 
 .side-nav__item:not(:last-child) {
   margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 750px) {
+  .side-nav__item:not(:last-child) {
+    margin-bottom: 0;
+  }
 }
 
 .side-nav__item:hover::before {
@@ -366,15 +421,26 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 2rem 1rem;
+}
+
+@media screen and (max-width: 750px) {
+  .side-nav__link:link, .side-nav__link:visited {
+    padding: 2rem;
+  }
 }
 
 .side-nav__icon {
   height: 1.75rem;
   width: 1.75rem;
-  margin-right: 2rem;
+  margin-right: 1rem;
   font-size: 2rem;
   fill: currentColor;
-  margin-left: -1rem;
+  margin-left: 1rem;
+}
+
+.side-nav__text {
+  margin-left: 2rem;
 }
 
 .legal {
@@ -382,6 +448,12 @@ body {
   font-size: 1.2rem;
   padding: 2rem;
   color: var(--color-grey-dark-2);
+}
+
+@media screen and (max-width: 750px) {
+  .legal {
+    display: none;
+  }
 }
 
 .hotel-view {
@@ -415,12 +487,17 @@ body {
           align-items: center;
 }
 
+@media screen and (max-width: 450px) {
+  .overview__heading {
+    font-size: 1.4rem;
+  }
+}
+
 .overview__stars {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-right: auto;
-  margin-left: 4rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -439,9 +516,15 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.2rem;
+  font-size: 60%;
   padding: 2rem;
-  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+@media screen and (max-width: 550px) {
+  .overview__location {
+    margin-left: 5rem;
+  }
 }
 
 .overview__rating {
@@ -466,7 +549,7 @@ body {
 }
 
 .overview__rating-count {
-  font-size: 1.6rem;
+  font-size: 70%;
 }
 
 .overview__gps {
@@ -484,6 +567,12 @@ body {
   padding: 1rem;
   -webkit-transform-origin: center;
           transform-origin: center;
+}
+
+@media screen and (max-width: 450px) {
+  .overview__gps {
+    font-size: 1.4rem;
+  }
 }
 
 .overview__gps::after {
@@ -558,6 +647,21 @@ body {
   border-bottom: var(--line);
 }
 
+@media screen and (max-width: 750px) {
+  .detail {
+    padding: 3rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .detail {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .detail .description {
   background-color: #fff;
   -webkit-box-shadow: var(--shadow-light);
@@ -568,6 +672,13 @@ body {
   margin-right: 4.5rem;
   padding: 3rem;
   font-size: 1.4rem;
+}
+
+@media screen and (max-width: 550px) {
+  .detail .description {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
 }
 
 .detail .user-reviews {
@@ -670,7 +781,6 @@ body {
 }
 
 .review__text {
-  font-size: 1.6rem;
   margin-bottom: 2rem;
 }
 
